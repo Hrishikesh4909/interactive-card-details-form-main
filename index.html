@@ -3,49 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <script src="javascript.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Grotesk">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive card details form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
+  </head>
 <body>
+  <article class="main-contianer">
+ <section class="card-container">
+  <div class="card-back"><span id="cvv">000</span></div>
+  <div class="card-front"><img src="images/card-logo.svg" id ="card-logo" alt="logo">
+  <span class ="card-no">0000 0000 0000 0000</span>
+  <div class="cardfront"><span id ="card-user-name">Jane Appleseed</span>
+  <div><span id="exdate-m">MM</span>/<span id="exdate-y">YY</span></div></div></div>   
+  </section>
+<section class="respo">
+<form class="form">
+  <label for="cardholder-name" >CARDHOLDER NAME</label>
+  <input type="text" class="cardholder-name" placeholder="e.g. Jane Appleseed" oninput="show_n()" onclick="fc_show()" maxlength="25">
+  <span class="error" id="name-error"> </span>
+  <label for="card-no"> CARD NUMBER</label>
+  <input type="text" class="card-no1" placeholder="e.g. 1234 5678 9123 0000" maxlength="16" oninput="show_num()" onclick="fc_show()" onkeypress="isInputNumber(event)">
+  <span class="error" id="num-error"></span>
+  <table>
+  <tr>  
+    <td><label for="exl">EXP. DATE (MM/YY)</label></td>
+  <td>
+    <label for="CVC"> CVC</label></td>
+  </tr>
+  <tr><div class="input">
+        <td><input class="expdate" type="text" placeholder="MM" max="12" id="mm" maxlength="2" oninput="show_m()" onclick="fc_show()" onkeypress="isInputNumber(event)"><input class="expdate" type="text" placeholder="YY" maxlength="2" id="yy" oninput="show_y()" onclick="fc_show()" onkeypress="isInputNumber(event)"><br><span class= "error" id="date-error"></span></td>
+        <td><input type="text" placeholder="e.g. 123" maxlength="3" id="CVC" oninput="show_cvc()" onclick="fc_show()" onkeypress="isInputNumber(event)"><br><span class="error" id="cvc-error"></span></td>
+        </div>
+      </tr>
+  </table>
+  <button onclick="confirm()">Confirm</button>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+</form>
+<div class="complete">
+  <img src="images/icon-complete.svg">
+  <p class="header">Thank You!</p>
+  <p class="sub-header">We've added your card details</p>
+  <button class="btn" onclick="v()">Continue</button>
+</div>
+</section>
+</article>
 
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/Hrishikesh4909">Hrishikesh Chavan</a>.
   </div>
 </body>
 </html>
