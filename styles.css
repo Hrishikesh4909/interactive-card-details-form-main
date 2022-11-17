@@ -1,41 +1,43 @@
-body{
-    display: grid;
-    grid-template-columns: repeat(10, 10%);
-    grid-template-rows: repeat(10,10%);
-    grid-template-areas: "card card card card card card card card card card"
-    "card card card card card card card card card card"
-    "card card card card card card card card card card"
-    "card card card card card card card card card card"
-    "form form form form form form form form form form"
-    "form form form form form form form form form form"
-    "form form form form form form form form form form"
-    "form form form form form form form form form form"
-    "form form form form form form form form form form"
-    "form form form form form form form form form form"
-    "form form form form form form form form form form";  
-    margin: 0%;  
-}
-.card-container{
-    grid-area: card;
-    background-image: url("images/bg-main-mobile.png");
-    backgroud
-    background-repeat: no-repeat;
-
-}
-.respo{
-    grid-area: form;
-}
-.form{
-    grid-area: form;
-    display:inline;
-}
-.attribution{
-    grid-row: 10;
-    display: inline;
-    margin-top: 10%;
-    
-}
 .complete{
     display: none;
-    grid-row:4/9;
 }
+.attribution{
+    display:none;
+}
+@media only screen and (max-width:900px){
+    body{
+        display:grid;
+        grid-template-rows: [r0] 30vh [r1] auto [r2];
+        padding: 0%;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .card-container{
+        grid-row-start: r0;
+        grid-row-end: r1;
+        background-image: url("images/bg-main-mobile.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0%;
+        margin:-2%;
+        border: 0%;
+        
+
+    }
+    .respo{
+        grid-row-start: r1;
+        grid-row-end: r2;
+    }
+    .form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        line-height: 10vh;
+    }
+    input{
+        height: 3.5vh;
+        
+    }
+}
+    
